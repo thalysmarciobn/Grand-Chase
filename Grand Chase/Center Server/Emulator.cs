@@ -11,18 +11,18 @@ namespace Center_Server
     {
         private static readonly ServerSettings[] Servers = 
         {
-            new ServerSettings() { Address = "127.0.0.1", Port = 9500, Limit = 1000, Backlog = 100 },
-            new ServerSettings() { Address = "127.0.0.1", Port = 9501, Limit = 1000, Backlog = 100 }
+            new ServerSettings() { Address = "127.0.0.1", Port = 9500, Limit = 1000, LimitPerAddress = 2, Backlog = 100 },
+            new ServerSettings() { Address = "127.0.0.1", Port = 9501, Limit = 1000, LimitPerAddress = 2, Backlog = 100 }
         };
 
-        private static readonly List<ServerSocket<Server>> _servers = new List<ServerSocket<Server>>();
+        private static readonly List<ServerSocket> _servers = new List<ServerSocket>();
         
         public static void Main(string[] args)
         {
             Logging.Info("Starting center server...");
             foreach (var setting in Servers)
             {
-                var networkServer = new ServerSocket<Server>(new Server(setting));
+                var networkServer = new Server(setting);
                 if (networkServer.Bind())
                 {
                     _servers.Add(networkServer);

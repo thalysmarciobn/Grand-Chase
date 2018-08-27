@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Communication\Server.cs" />
+    <Compile Include="Communication\Session.cs" />
     <Compile Include="Emulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

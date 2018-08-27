@@ -1,16 +1,13 @@
 ﻿namespace Common.Communication
 {
-    public abstract class IServer
+    public interface IServer
     {
-        public ServerSettings Settings { get; private set; }
+        ServerSettings Settings { get; }
+        
+        void Accept(ServerSession session);
 
-        protected IServer(ServerSettings settings)
-        {
-            Settings = settings;
-        }
+        void Close(ServerSession session);
 
-        public abstract void Receive(byte[] buffer, int size);
-        public abstract void Accept(ServerSession session);
-        public abstract void Close(ServerSession session);
+        int ConnectionsByAddress(string address);
     }
 }

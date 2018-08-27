@@ -1,18 +1,24 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using Common.Log;
 
 namespace Common.Communication
 {
-    public class ServerSocket<T> : IServer
+    public class ServerSocket : IServer
     {
         private TcpListener _tcpListener;
+        private ConcurrentDictionary<ServerSession, string> _connections = new ConcurrentDictionary<ServerSession, string>();
         private bool _running;
 
-        public ServerSocket(IServer server) : base(server.Settings)
+        public ServerSocket(ServerSettings serverSettings)
         {
-            Logging.Info($"Starting a network on port: {server.Settings.Port}");
+            Logging.Info($"Starting a network on port: {serverSettings.Port}");
+            Settings = serverSettings;
         }
 
         public bool Bind()
@@ -41,23 +47,34 @@ namespace Common.Communication
 
         private void AcceptConnection(IAsyncResult iAsyncResult)
         {
-            var client = _tcpListener.EndAcceptTcpClient(iAsyncResult);
-            var session = new ServerSession(client);
+            lock (_connections)
+            {
+                var client = _tcpListener.EndAcceptTcpClient(iAsyncResult);
+                var session = new ServerSession(client);
+                if (_connections.Count >= Settings.Limit) return;
+                if (ConnectionsByAddress(session.Address) > Settings.LimitPerAddress) return;
+                if (_connections.TryAdd(session, session.Address))
+                {
+                    Accept(session);
+                }
+            }
         }
 
-        public override void Receive(byte[] buffer, int size)
+        public ServerSettings Settings { get; }
+
+        public int ConnectionsByAddress(string address)
         {
-            throw new NotImplementedException();
+            return _connections.Count(x => x.Value == address);
         }
 
-        public override void Accept(ServerSession session)
+        public virtual void Accept(ServerSession session)
         {
-            throw new NotImplementedException();
+            Logging.Server($"New connection: {session.Address}");
         }
 
-        public override void Close(ServerSession session)
+        public virtual void Close(ServerSession session)
         {
-            throw new NotImplementedException();
+            Logging.Server($"New connection: {session.Address}");
         }
     }
 }

@@ -8,6 +8,7 @@
         <e p="Center Server.csproj" t="IncludeRecursive" />
         <e p="Communication" t="Include">
           <e p="Server.cs" t="Include" />
+          <e p="Session.cs" t="Include" />
         </e>
         <e p="Emulator.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
@@ -22,6 +23,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Common.csproj" t="IncludeRecursive" />
         <e p="Communication" t="Include">
+          <e p="ClientSession.cs" t="Include" />
           <e p="IServer.cs" t="Include" />
           <e p="Opcodes.cs" t="Include" />
           <e p="Packet" t="Include">
