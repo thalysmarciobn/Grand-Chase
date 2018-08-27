@@ -49,8 +49,8 @@ namespace Common.Communication
         {
             lock (_connections)
             {
-                var client = _tcpListener.EndAcceptTcpClient(iAsyncResult);
-                var session = new ServerSession(client);
+                var client = _tcpListener.EndAcceptSocket(iAsyncResult);
+                var session = new ServerSession(this, client);
                 if (_connections.Count >= Settings.Limit) return;
                 if (ConnectionsByAddress(session.Address) > Settings.LimitPerAddress) return;
                 if (_connections.TryAdd(session, session.Address))
