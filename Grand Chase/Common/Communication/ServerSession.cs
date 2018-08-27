@@ -8,10 +8,8 @@ namespace Common.Communication
     {
         private readonly ServerSocket _serverSocket;
         private readonly Socket _client;
-
-        private bool _reading = false;
         
-        private byte[] _dataBuffer;
+        private byte[] _dataBuffer = new byte[65536];
         
         public ClientSession Client { get; private set; }
         
@@ -25,12 +23,8 @@ namespace Common.Communication
 
         public void SetSession(ClientSession session)
         {
+            if (Client != null) return;
             Client = session;
-        }
-
-        public void StartRead()
-        {
-            if (_reading) return;
             try
             {
                 _client.BeginReceive(_dataBuffer, 0, _dataBuffer.Length, SocketFlags.None,
@@ -47,12 +41,27 @@ namespace Common.Communication
             try
             {
                 var bytes = _client.EndReceive(iAr);
-                var data = new byte[bytes];
+                if (bytes > 0)
+                {
+                    var data = new byte[bytes];
+                    Client.Receive(data, bytes);
+                    _client.BeginReceive(_dataBuffer, 0, _dataBuffer.Length, SocketFlags.None,
+                        BytesReceived, this);
+                }
+                else
+                {
+                    _serverSocket.Close(this);
+                }
             }
             catch
             {
                 _serverSocket.Close(this);
             }
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

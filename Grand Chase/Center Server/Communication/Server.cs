@@ -20,6 +20,9 @@ namespace Center_Server.Communication
 
         public override void Close(ServerSession session)
         {
+            base.Close(session);
+            // update sql stats on = 0, etc..
+            session.Dispose();
         }
     }
 }

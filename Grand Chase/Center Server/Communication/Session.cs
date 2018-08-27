@@ -1,4 +1,5 @@
-﻿using Common.Communication;
+﻿using System;
+using Common.Communication;
 
 namespace Center_Server.Communication
 {

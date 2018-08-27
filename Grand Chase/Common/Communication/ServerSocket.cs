@@ -58,6 +58,7 @@ namespace Common.Communication
                     Accept(session);
                 }
             }
+            _tcpListener.BeginAcceptTcpClient(AcceptConnection, null);
         }
 
         public ServerSettings Settings { get; }
@@ -74,7 +75,7 @@ namespace Common.Communication
 
         public virtual void Close(ServerSession session)
         {
-            Logging.Server($"New connection: {session.Address}");
+            Logging.Server($"Closed connection: {session.Address}");
         }
     }
 }
