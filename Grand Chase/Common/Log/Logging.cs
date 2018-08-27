@@ -19,5 +19,19 @@ namespace Common.Log
                 Console.WriteLine();
             }
         }
+        
+        public static void Alert(string message)
+        {
+            lock (Lock)
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write($"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}]");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(" [INFO] ");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write(message);
+                Console.WriteLine();
+            }
+        }
     }
 }

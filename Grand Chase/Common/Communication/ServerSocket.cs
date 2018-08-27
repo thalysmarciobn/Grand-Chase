@@ -22,12 +22,11 @@ namespace Common.Communication
                 _tcpListener = new TcpListener(IPAddress.Parse(Settings.Address), Settings.Port);
                 _tcpListener.Start();
                 _tcpListener.Server.Listen(Settings.Backlog);
-                _running = true;
-                return _running;
+                return _running = true;
             }
             catch
             {
-                Logging.Info($"Can't bind server on port: {Settings.Port}");
+                Logging.Alert($"Can't bind server on port: {Settings.Port}");
             }
 
             return false;
@@ -35,20 +34,15 @@ namespace Common.Communication
 
         public void BeginAcceptClients()
         {
-            if (_running)
-            {
-                Logging.Info($"Accepting clients on port: {Settings.Port}");
-                _tcpListener.BeginAcceptTcpClient(AcceptConnection, null);
-            }
-            else
-            {
-                Logging.Info($"Can't accept clients on port: {Settings.Port}");
-            }
+            if (!_running) return;
+            Logging.Info($"Accepting clients on port: {Settings.Port}");
+            _tcpListener.BeginAcceptTcpClient(AcceptConnection, null);
         }
 
         private void AcceptConnection(IAsyncResult iAsyncResult)
         {
             var client = _tcpListener.EndAcceptTcpClient(iAsyncResult);
+            var session = new ServerSession(client);
         }
 
         public override void Receive(byte[] buffer, int size)
