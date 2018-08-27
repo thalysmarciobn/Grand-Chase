@@ -28,7 +28,10 @@ namespace Center_Server
                     _servers.Add(networkServer);
                 }
             }
-
+            foreach (var server in _servers)
+            {
+                server.BeginAcceptClients();
+            }
             while (true)
             {
                 Thread.Sleep(50);

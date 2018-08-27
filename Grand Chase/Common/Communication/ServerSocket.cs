@@ -12,7 +12,7 @@ namespace Common.Communication
 
         public ServerSocket(IServer server) : base(server.Settings)
         {
-            Logging.Info($"Starting server on port: {server.Settings.Port}");
+            Logging.Info($"Starting a network on port: {server.Settings.Port}");
         }
 
         public bool Bind()
@@ -37,7 +37,12 @@ namespace Common.Communication
         {
             if (_running)
             {
+                Logging.Info($"Accepting clients on port: {Settings.Port}");
                 _tcpListener.BeginAcceptTcpClient(AcceptConnection, null);
+            }
+            else
+            {
+                Logging.Info($"Can't accept clients on port: {Settings.Port}");
             }
         }
 
