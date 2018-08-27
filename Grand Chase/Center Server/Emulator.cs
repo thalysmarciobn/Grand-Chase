@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using Center_Server.Communication;
 using Common.Communication;
 
 namespace Center_Server
@@ -15,7 +16,7 @@ namespace Center_Server
         {
             foreach (var setting in Servers)
             {
-                var networkServer = new ServerSocket(setting);
+                var networkServer = new ServerSocket<Server>(new Server(setting));
                 networkServer.Bind();
             }
 

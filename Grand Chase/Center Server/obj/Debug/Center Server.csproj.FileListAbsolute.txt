@@ -1,0 +1,11 @@
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\bin\Debug\Center_Server.exe
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\bin\Debug\Center_Server.pdb
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\bin\Debug\Common.dll
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\bin\Debug\Database.dll
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\bin\Debug\Common.pdb
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\bin\Debug\Database.pdb
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\obj\Debug\Center Server.csprojAssemblyReference.cache
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\obj\Debug\Center Server.csproj.CoreCompileInputs.cache
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\obj\Debug\Center Server.csproj.CopyComplete
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\obj\Debug\Center_Server.exe
+C:\Users\Thalys\Documents\C#\Grand Chase\Grand Chase\Center Server\obj\Debug\Center_Server.pdb

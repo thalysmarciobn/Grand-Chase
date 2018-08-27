@@ -1,4 +1,5 @@
 ﻿using System.Net.Sockets;
+using Common.Attributes;
 
 namespace Common.Communication
 {

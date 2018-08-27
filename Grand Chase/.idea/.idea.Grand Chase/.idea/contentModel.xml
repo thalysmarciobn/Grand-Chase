@@ -6,6 +6,9 @@
       <e p="Center Server" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Center Server.csproj" t="IncludeRecursive" />
+        <e p="Communication" t="Include">
+          <e p="Server.cs" t="Include" />
+        </e>
         <e p="Emulator.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Properties" t="Include">
@@ -13,13 +16,26 @@
         </e>
       </e>
       <e p="Common" t="IncludeRecursive">
+        <e p="Attributes" t="Include">
+          <e p="OpcodeInAttribute.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Common.csproj" t="IncludeRecursive" />
         <e p="Communication" t="Include">
+          <e p="IServer.cs" t="Include" />
           <e p="Opcodes.cs" t="Include" />
+          <e p="Packet" t="Include">
+            <e p="IPacketRequest.cs" t="Include" />
+            <e p="PacketManager.cs" t="Include" />
+            <e p="PacketRead.cs" t="Include" />
+            <e p="PacketWrite.cs" t="Include" />
+          </e>
           <e p="ServerSession.cs" t="Include" />
           <e p="ServerSettings.cs" t="Include" />
           <e p="ServerSocket.cs" t="Include" />
+        </e>
+        <e p="Log" t="Include">
+          <e p="Logging.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="Properties" t="Include">
