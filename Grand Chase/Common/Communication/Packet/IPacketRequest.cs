@@ -2,6 +2,6 @@
 {
     public interface IPacketRequest
     {
-        void Dispatch(ServerSession session, PacketRead packetRead);
+        void Dispatch(ServerSession session);
     }
 }

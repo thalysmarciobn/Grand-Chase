@@ -29,7 +29,6 @@
           <e p="Packet" t="Include">
             <e p="IPacketRequest.cs" t="Include" />
             <e p="PacketManager.cs" t="Include" />
-            <e p="PacketRead.cs" t="Include" />
             <e p="PacketWrite.cs" t="Include" />
           </e>
           <e p="ServerSession.cs" t="Include" />

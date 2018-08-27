@@ -7,11 +7,18 @@ namespace Common.Attributes
     {
         public Opcodes.Center Center { get; }
         
+        public Opcodes.Message Message { get; }
+        
         public Opcodes.Game Game { get; }
     
         public OpcodeInAttribute(Opcodes.Center code)
         {
             Center = code;
+        }
+    
+        public OpcodeInAttribute(Opcodes.Message code)
+        {
+            Message = code;
         }
     
         public OpcodeInAttribute(Opcodes.Game code)

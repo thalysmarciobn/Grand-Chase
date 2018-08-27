@@ -44,7 +44,6 @@
     <Compile Include="Communication\Opcodes.cs" />
     <Compile Include="Communication\Packet\IPacketRequest.cs" />
     <Compile Include="Communication\Packet\PacketManager.cs" />
-    <Compile Include="Communication\Packet\PacketRead.cs" />
     <Compile Include="Communication\Packet\PacketWrite.cs" />
     <Compile Include="Communication\ServerSession.cs" />
     <Compile Include="Communication\ServerSettings.cs" />
