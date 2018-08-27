@@ -8,6 +8,7 @@ namespace Common.Communication
         public byte[] HMAC_KEY = { 0xC0, 0xD3, 0xBD, 0xC3, 0xB7, 0xCE, 0xB8, 0xB8 };;
         public int HMAC_SIZE = 10;
         
+        
         public abstract void Receive(byte[] buffer, int size);
     }
 }

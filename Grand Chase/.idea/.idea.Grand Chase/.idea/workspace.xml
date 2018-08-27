@@ -63,17 +63,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientSession.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientSession.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Common/Communication/ClientSession.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="135">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding>
-                <marker date="1535411619779" expanded="true" signature="6:69" ph="..." />
-                <marker date="1535411619779" expanded="true" signature="101:674" ph="{...}" />
-                <marker date="1535411619779" expanded="true" signature="143:672" ph="{...}" />
-                <marker date="1535411619779" expanded="true" signature="252:353" ph="{...}" />
-                <marker date="1535411619779" expanded="true" signature="388:594" ph="{...}" />
+                <marker date="1535411834189" expanded="true" signature="67:413" ph="{...}" />
+                <marker date="1535411834189" expanded="true" signature="109:411" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -120,16 +117,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Opcodes.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Opcodes.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Common/Communication/Opcodes.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="29" />
+            <state relative-caret-position="338">
+              <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
               <folding>
-                <marker date="1535389814089" expanded="true" signature="30:68119" ph="{...}" />
-                <marker date="1535389814089" expanded="true" signature="57:68117" ph="{...}" />
-                <marker date="1535389814089" expanded="true" signature="90:1292" ph="{...}" />
-                <marker date="1535389814089" expanded="true" signature="1326:68110" ph="{...}" />
+                <marker date="1535412128993" expanded="true" signature="30:88156" ph="{...}" />
+                <marker date="1535412128993" expanded="true" signature="57:88154" ph="{...}" />
+                <marker date="1535412128993" expanded="true" signature="90:2107" ph="{...}" />
+                <marker date="1535412128993" expanded="true" signature="2133:88148" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -172,7 +169,6 @@
       <list>
         <option value="$PROJECT_DIR$/Common/Class1.cs" />
         <option value="$PROJECT_DIR$/Center Server/Class1.cs" />
-        <option value="$PROJECT_DIR$/Common/Communication/Opcodes.cs" />
         <option value="$PROJECT_DIR$/Database/Class1.cs" />
         <option value="$PROJECT_DIR$/Common/Attributes/OpcodeInAttribute.cs" />
         <option value="$PROJECT_DIR$/Common/Communication/Packet/PacketRead.cs" />
@@ -196,6 +192,7 @@
         <option value="$PROJECT_DIR$/Common/Utilities/BigEndian/BigEndian.cs" />
         <option value="$PROJECT_DIR$/Common/Communication/Packet/PacketWrite.cs" />
         <option value="$PROJECT_DIR$/Common/Communication/ClientSession.cs" />
+        <option value="$PROJECT_DIR$/Common/Communication/Opcodes.cs" />
       </list>
     </option>
   </component>
@@ -324,12 +321,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535389369047</updated>
-      <workItem from="1535389377057" duration="15123000" />
+      <workItem from="1535389377057" duration="15632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15123000" />
+    <option name="totallyTimeSpent" value="15632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,19 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Communication/Opcodes.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <marker date="1535389814089" expanded="true" signature="30:68119" ph="{...}" />
-            <marker date="1535389814089" expanded="true" signature="57:68117" ph="{...}" />
-            <marker date="1535389814089" expanded="true" signature="90:1292" ph="{...}" />
-            <marker date="1535389814089" expanded="true" signature="1326:68110" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Center Server/Communication/Session.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -629,14 +613,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Common/Communication/ClientSession.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="135">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding>
-            <marker date="1535411619779" expanded="true" signature="6:69" ph="..." />
-            <marker date="1535411619779" expanded="true" signature="101:674" ph="{...}" />
-            <marker date="1535411619779" expanded="true" signature="143:672" ph="{...}" />
-            <marker date="1535411619779" expanded="true" signature="252:353" ph="{...}" />
-            <marker date="1535411619779" expanded="true" signature="388:594" ph="{...}" />
+            <marker date="1535411834189" expanded="true" signature="67:413" ph="{...}" />
+            <marker date="1535411834189" expanded="true" signature="109:411" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Communication/Opcodes.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+          <folding>
+            <marker date="1535412128993" expanded="true" signature="30:88156" ph="{...}" />
+            <marker date="1535412128993" expanded="true" signature="57:88154" ph="{...}" />
+            <marker date="1535412128993" expanded="true" signature="90:2107" ph="{...}" />
+            <marker date="1535412128993" expanded="true" signature="2133:88148" ph="{...}" />
           </folding>
         </state>
       </provider>
