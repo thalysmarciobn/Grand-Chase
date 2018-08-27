@@ -8,28 +8,40 @@ namespace Common.Communication
     public class ServerSocket<T> : IServer
     {
         private TcpListener _tcpListener;
+        private bool _running;
 
         public ServerSocket(IServer server) : base(server.Settings)
         {
             Logging.Info($"Starting server on port: {server.Settings.Port}");
         }
 
-        public void Bind()
+        public bool Bind()
         {
-            _tcpListener = new TcpListener(IPAddress.Parse(Settings.Address), Settings.Port);
-            _tcpListener.Start();
-            _tcpListener.Server.Listen(Settings.Backlog);
             try
             {
-                _tcpListener.BeginAcceptTcpClient(AcceptConnection, null);
+                _tcpListener = new TcpListener(IPAddress.Parse(Settings.Address), Settings.Port);
+                _tcpListener.Start();
+                _tcpListener.Server.Listen(Settings.Backlog);
+                _running = true;
+                return _running;
             }
             catch
             {
-                
+                Logging.Info($"Can't bind server on port: {Settings.Port}");
+            }
+
+            return false;
+        }
+
+        public void BeginAcceptClients()
+        {
+            if (_running)
+            {
+                _tcpListener.BeginAcceptTcpClient(AcceptConnection, null);
             }
         }
 
-        public void AcceptConnection(IAsyncResult iAsyncResult)
+        private void AcceptConnection(IAsyncResult iAsyncResult)
         {
             var client = _tcpListener.EndAcceptTcpClient(iAsyncResult);
         }
