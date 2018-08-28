@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using Common.Attributes;
+using Common.Communication.Packet;
 
 namespace Common.Communication
 {

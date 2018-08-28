@@ -35,6 +35,7 @@
           <e p="ServerSettings.cs" t="Include" />
           <e p="ServerSocket.cs" t="Include" />
         </e>
+        <e p="Crypto" t="Include" />
         <e p="Log" t="Include">
           <e p="Logging.cs" t="Include" />
         </e>
